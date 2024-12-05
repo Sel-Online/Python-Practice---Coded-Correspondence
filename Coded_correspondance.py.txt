@@ -1,0 +1,79 @@
+
+```Python
+alpha = "abcdefghijklmnopqrstuvwxyz"
+message = "xuo jxuhu! jxyi yi qd unqcfbu ev q squiqh syfxuh. muhu oek qrbu je tusetu yj? y xefu ie! iudt cu q cuiiqwu rqsa myjx jxu iqcu evviuj!"
+decoded = ""
+
+for i in message:
+    if i == " ": 
+        decoded = decoded + i
+    elif i == "!":
+        decoded = decoded + i
+    elif i == ".":
+        decoded = decoded + i
+    elif i == "?":
+        decoded = decoded + i
+    else: 
+        decoded = decoded + alpha[(alpha.find(i) + 10) % 26 ]
+
+print(decoded)
+# hey there! this is an example of a caesar cipher. were you able to decode it? i hope so! send me a message back with the same offset!
+alpha = "abcdefghijklmnopqrstuvwxyz"
+message = "hey dude! you are epic and kind."
+decoded = ""
+
+for i in message:
+    if i == " ": 
+        decoded = decoded + i
+    elif i == "!":
+        decoded = decoded + i
+    elif i == ".":
+        decoded = decoded + i
+    elif i == "?":
+        decoded = decoded + i
+    else: 
+        decoded = decoded + alpha[(alpha.find(i) - 10) % 26 ]
+
+print(decoded)
+\#xuo tktu! oek qhu ufys qdt aydt.
+
+def caesar_decode(message, offset):
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    decoded = ""
+
+    for i in message:
+        if i == " ": 
+            decoded = decoded + i
+        elif i == "!":
+            decoded = decoded + i
+        elif i == ".":
+            decoded = decoded + i
+        elif i == "?":
+            decoded = decoded + i
+        else: 
+            decoded = decoded + alpha[(alpha.find(i) + offset) % 26 ]
+    return decoded
+print(caesar_decode("jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud.", 10))
+print(caesar_decode("bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!", 14))
+
+
+# the offset for the second message is fourteen.
+# performing multiple caesar ciphers to code your messages is even more secure!
+
+
+def caesar_encode(message, offset):
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    decoded = ""
+
+    for i in message:
+        if i == " ": 
+            decoded = decoded + i
+        elif i == "!":
+            decoded = decoded + i
+        elif i == ".":
+            decoded = decoded + i
+        elif i == "?":
+            decoded = decoded + i
+        else: 
+            decoded = decoded + alpha[(alpha.find(i) - offset) % 26 ]
+    return decoded
